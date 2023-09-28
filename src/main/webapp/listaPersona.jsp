@@ -11,15 +11,15 @@
         <th>ID</th><th>Nombre</th><th>Apellido</th><th>Fecha de Nacimiento</th><th>Lugar de Nacimiento</th>
     </thead>
     <tbody>
-        <c.forEach var="persona" items="·{PERSONAS}">
+        <c:forEach var="persona" items="${PERSONAS}">
             <tr>
                 <td>${persona.id}</td>
                 <td>${persona.nombre}</td>
                 <td>${persona.apellido}</td>
-                <td><fmt:formatDate value="${persona.fechaNacimiento}" pattern="dd-MM-yyyy"></td>
+                <td><fmt:formatDate value="${persona.fechaNacimiento}" pattern="dd-MM-yyyy"></fmt:formatDate></td>
                 <td>${persona.lugarNacimiento}</td>
             </tr>
-        </c.forEach>
+        </c:forEach>
     </tbody>
 </table>
 </body>
