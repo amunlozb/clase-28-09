@@ -7,6 +7,7 @@ import com.clase2809.model.Persona;
 import com.clase2809.servicio.PersonaServicio;
 import com.clase2809.servicio.PersonaServicioImpl;
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -19,13 +20,14 @@ public class HelloServlet extends HttpServlet {
         message = "Do get";
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         System.out.println("do get reached");
 
         List<Persona> personas = servicio.getAllPersonas();
         request.setAttribute("PERSONAS", personas);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("listaPersona.jsp");
+        dispatcher.forward(request, response);
     }
 
     public void destroy() {
