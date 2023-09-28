@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>JSP</title>
 </head>
 <body>
 <h1><%= "Clase 28-09" %>

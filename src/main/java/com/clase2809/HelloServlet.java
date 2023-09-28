@@ -17,11 +17,9 @@ public class HelloServlet extends HttpServlet {
     PersonaServicio servicio = new PersonaServicioImpl();
 
     public void init() {
-        message = "Do get";
     }
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        System.out.println("do get reached");
 
         List<Persona> personas = servicio.getAllPersonas();
         request.setAttribute("PERSONAS", personas);
