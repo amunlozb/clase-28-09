@@ -32,7 +32,7 @@ public class HelloServlet extends HttpServlet {
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
-        boolean filtrarMenores = "true".equals(request.getAttribute("filter"));
+        boolean filtrarMenores = "true".equals(request.getParameter("filter"));
 
         List<Persona> personas = servicio.getAllPersonas();
 
@@ -47,6 +47,10 @@ public class HelloServlet extends HttpServlet {
 
             }).collect(Collectors.toList());
         }
+
+        request.setAttribute("PERSONAS", personas);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("listaPersona.jsp");
+        dispatcher.forward(request, response);
     }
 
 

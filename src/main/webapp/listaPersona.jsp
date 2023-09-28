@@ -21,7 +21,7 @@
             </tr>
         </c:forEach>
     </tbody>
-    <form action="hello-servlet" method="post">
+    <form action="/hello-servlet" method="post">
         <input type="checkbox" id="filter" name="filter" value="true">
         <input type="submit" value="Filtrar">
     </form>
